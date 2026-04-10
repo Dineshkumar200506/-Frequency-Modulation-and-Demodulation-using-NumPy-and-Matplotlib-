@@ -34,6 +34,44 @@ __Algorithm:__
 
 __Programme:__
 
+```
+import numpy as np
+import matplotlib.pyplot as plt
+
+am = 3.7
+fm = 166
+fs = 16600
+
+t = np.arange(0, 2/fm, 1/fs)
+
+m = am * np.cos(2 * np.pi * fm * t)
+plt.subplot(3,1,1)
+plt.plot(t, m)
+
+ac = 7.4
+fc = 1660
+
+c = ac * np.cos(2 * np.pi * fc * t)
+plt.subplot(3,1,2)
+plt.plot(t, c)
+
+b = 6.7
+
+s = ac * np.cos(2 * np.pi * fc * t + np.sin(2 * np.pi * fm * t))
+plt.subplot(3,1,3)
+plt.plot(t, s)
+plt tight_layout()
+
+```
+
 __Output:__
 
+<img width="1080" height="704" alt="image" src="https://github.com/user-attachments/assets/60a32836-5b1c-40a2-adf3-baaaab691e99" />
+
+__Tabulation:__
+
+<img width="1080" height="672" alt="image" src="https://github.com/user-attachments/assets/d7d450b7-653c-4b3e-809a-3618c97e9990" />
+
+
 __Result:__
+Thus, the FM frequency modulation signal is generated using python
